@@ -1,4 +1,4 @@
-# 信号与系统
+# 信号与系统----傅里叶变化精讲
 
 ## task 1 What’s the role of the Fourier transform in signals and systems’ analysis?
 
@@ -62,7 +62,8 @@
 
 ## task 2 For the properties of the continuous-time Fourier transform, what does the relationship between the characteristics of signals in time and frequency domains they show?
 
-Uniqueness (唯一性)
+### Uniqueness (唯一性)
+
 $$
 \mathcal{F}\{x_1(t)\}=\mathcal{F}\{x_2(t)\}  \to x_1(t)=x_2(t)\newline
 \mathcal{F}^{-1}\{x_1(t)\}=\mathcal{F}^{-1}\{x_2(t)\}  \to X_1(j\omega)=X_2(j\omega)
@@ -70,7 +71,7 @@ $$
 
 傅里叶变换的唯一性表明了信号及其频谱之间的一 一对应关系。这一性质给信号的变换、处理、鉴别 和恢复提供了理论依据。如：气体检测、矿物鉴定。
 
- Linearity (线性)
+###  Linearity (线性)
 
 if:
 
@@ -85,7 +86,7 @@ $$
 ax(t)+by(t)\stackrel{\mathcal{F}}{\longleftrightarrow}aX(j\omega)+bY(j\omega)
 $$
 
-时移性质
+### 时移性质
 
 若：
 
@@ -109,8 +110,10 @@ $$
 在该式中以 $t-t_0$ 取代t，可得
 
 $$
-x(t-t_0)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}X(j\omega)e^{j\omega (t-t_0)}d\omega\\
-=\frac{1}{2\pi}\int_{-\infty}^{+\infty}(e^{-j\omega t_0 }X(j\omega))e^{j\omega t}d\omega
+\begin{aligned}
+x(t-t_0)&=\frac{1}{2\pi}\int_{-\infty}^{+\infty}X(j\omega)e^{j\omega (t-t_0)}d\omega\\
+&=\frac{1}{2\pi}\int_{-\infty}^{+\infty}(e^{-j\omega t_0 }X(j\omega))e^{j\omega t}d\omega
+\end{aligned}
 $$
 
 所以可得：
@@ -131,7 +134,7 @@ $$
 \Delta\varphi = -\omega t_0
 $$
 
-共轭与共轭对称性质
+### 共轭与共轭对称性质
 
 共轭性质是指，若：
 
@@ -184,7 +187,7 @@ $$
 
 FT共轭对称性：实信号的傅氏变换是厄米函数
 
-实信号频谱对称性：
+### 实信号频谱对称性：
 
 $$
 \left\{
@@ -195,7 +198,8 @@ $$
 \right.
 $$
 
-微分与积分性质
+### 微分与积分性质
+
 $$
 x(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}X(j\omega)e^{j\omega t}d\omega
 $$
@@ -226,7 +230,7 @@ $$
 \mathcal F\{u(t)\}=\int_{-\infty}^t\delta(\tau)d\tau = \frac{1}{j\omega}+\pi\delta(\omega)
 $$
 
-时间与频率的尺度变换性质
+### 时间与频率的尺度变换性质
 
 若：
 
@@ -269,7 +273,7 @@ $$
 
 <img src=".\assets\b37bc84492e5a277fb5e8352405fc0b9.png" alt="b37bc84492e5a277fb5e8352405fc0b9" />
 
-对偶性质
+### 对偶性质
 
 if:
 
@@ -286,16 +290,19 @@ X(t)\stackrel{\mathcal{F}}{\longleftrightarrow}2\pi x(-\omega)\\
     X(t)=X(\omega)|_{\omega = t}\\
     x(\omega)=x(t)|_{t=\omega}
 \end{aligned}
-\right.\\
-x(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}X(\omega)e^{j\omega t}d\omega\\
-x(-t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}X(\omega)e^{-j\omega t}d\omega\\
-x(-\omega)=\frac{1}{2\pi}\int_{-\infty}^{\infty}X(t)e^{-j\omega t}dt\\
-\to 2\pi x(-\omega)=\int_{-\infty}^{\infty}X(t)e^{-j\omega t}dt = \mathcal F\{X(t)\}
+\right.
 $$
 
+证明：
 
-
-<img src=".\assets\e29a821d9b891c6360daae94bad52363.png" alt="e29a821d9b891c6360daae94bad52363" />
+$$
+\begin{aligned}
+x(t)&=\frac{1}{2\pi}\int_{-\infty}^{\infty}X(\omega)e^{j\omega t}d\omega\\
+t \to - t,x(-t)&=\frac{1}{2\pi}\int_{-\infty}^{\infty}X(\omega)e^{-j\omega t}d\omega\\
+t,\omega \text{互换}x(-\omega)&=\frac{1}{2\pi}\int_{-\infty}^{\infty}X(t)e^{-j\omega t}dt\\
+\Longrightarrow 2\pi x(-\omega)&=\int_{-\infty}^{\infty}X(t)e^{-j\omega t}dt = \mathcal F\{X(t)\}
+\end{aligned}
+$$
 
 时域和频域波形可互换：波形变化规律保持不变
 
@@ -305,7 +312,7 @@ $$
 
 
 
-帕塞瓦尔定理
+### 帕塞瓦尔定理
 
 若：
 
@@ -340,15 +347,8 @@ $$
 \int_{-\infty}^{+\infty}|x(t)|^2dt=\frac{1}{2\pi}\int_{-\infty}^{+\infty}|X(j\omega)|^2d\omega
 $$
 
-## task 3 Is there a continuous-time signal which has an infinite frequency band-width?
+## task 3 For signals 𝑥(𝑡) = 𝑢(𝑡 + 1) − 𝑢(𝑡 − 1) and$y(t)=\sum^{+\infty}_{k=-\infty}[u(t+1-5k)-u(t-1-5k)]$,how the Fourier transform of 𝑥𝑥(𝑡𝑡) relates to that of 𝑦𝑦(𝑡𝑡)? Explain.
 
-
-
-## task 4 In some cases, even if a continuous-time signal does not satisfy the condition of absolutely integrable* we still can find its Fourier transform. Can you list some of this kind of signals? And How to find their Fourier transform?
-
-
-
-## task 5 For signals 𝑥(𝑡) = 𝑢(𝑡 + 1) − 𝑢(𝑡 − 1) and$y(t)=\sum^{+\infty}_{k=-\infty}[u(t+1-5k)-u(t-1-5k)]$,how the Fourier transform of 𝑥𝑥(𝑡𝑡) relates to that of 𝑦𝑦(𝑡𝑡)? Explain.
 $$
 \begin{aligned}
 x(t) & =u(t+1)-u(t-1) \\
@@ -366,12 +366,7 @@ $$
 
 不难发现，是时移后的线性组合，反映了傅里叶变换的线性性质和时移性质。（见教材P127）
 
-
-## task 6  For signals 𝑥𝑥(𝑡𝑡) = 𝑢(𝑡 + 0.5) − 𝑢(𝑡 − 0.5) and 𝑦(𝑡) = (1 + cosπ𝑡)[𝑢(𝑡 + 0.5) −𝑢(𝑡 − 0.5)], which of them is smoother? You can find answer after you obtain their magnitude spectra.
-
-
-
-## task 7 How to use Fourier transform to determine the response 𝑦(𝑡) for a continuous-time LTI system to an input signal 𝑥(𝑡)?
+## task 4 How to use Fourier transform to determine the response 𝑦(𝑡) for a continuous-time LTI system to an input signal 𝑥(𝑡)?
 
 下面是使用傅里叶变换来确定连续时间 LTI 系统对输入信号 x(t)的响应 y(t)的一般步骤：
 
@@ -389,11 +384,25 @@ $$
 
 需要注意的是，在实际应用中，可能需要考虑一些具体的条件和限制，例如信号的边界条件、系统的稳定性等。
 
-## task 8 What are frequency selective filters? Why do we explore ideal frequency selective filters? Why are ideal filters unrealizable?
+## task 5 What are frequency selective filters? Why do we explore ideal frequency selective filters? Why are ideal filters unrealizable?
 
+什么是频率选择滤波器：频率选择滤波器是用于滤除输入信号频率中不需要成分的一种电路，它是一种双口传输网络。 由于它是用来对电信号的某一段频率进行选择的，又称频选滤波器。
 
+为什么我们要探索理想的频率选择滤波器：理想频率选择滤波器能使通带内信号的幅值和相位都不失真，阻带内的频率成分都衰减为零，其通带和阻带之间有明显的分界线。
 
-## task 9 Can you relate Fourier Transform with one of Chairman Xi’s words (points of view) ?
+为什么理想的滤波器无法实现：
+
+在因果条件下，理想低通滤波器的频率响应函数可以表示为:
+
+$H(j \omega)=\left\{\begin{array}{cc}\mathrm{e}^{-j \omega t_{d}}, & |\omega|<\omega_{C} \\0, & |\omega|>\omega_{C}\end{array}=g_{2 \omega_{C}}(\omega) \mathrm{e}^{-j \omega{\normalsize }  t_{d}}\right.$
+
+该理想低通滤波器的冲激响应为：$h(t)=ω_c/π Sa[ω_c (t-t_d)]$
+
+当截止角频率为5，时移为1时，对应的理想低通滤波器的冲激响应如下图所示：![img](./assets/v2-3831ff5969bbaa9de7cc62ca50d2ac08_r.jpg)
+
+当输入为冲激函数时，这个滤波器的冲激响应竟然要求在输入之前就存在一部分（ t<0时），这违背了因果性，因此说这是理想的低通滤波器，是不可能实现的。
+
+## task 6 Can you relate Fourier Transform with one of Chairman Xi’s words (points of view) ?
 
 傅里叶的核心思想概括起来有以下两条. 
 
@@ -452,7 +461,7 @@ $$
 1. 蔡志东.物理通报.傅里叶思想的精髓及其伟大之处.2021.4
 1. 姜 辉.红旗文稿2017/13.习近平治国理政思想的理论贡献
 
-## task 10 Music synthesis and Sound processing（音乐合成与音效处理）
+## task 7 Music synthesis and Sound processing（音乐合成与音效处理）
 
 In music synthesis, the Fourier transform is used to analyze and synthesize sounds. For example, in a synthesizer, we can use the Fourier transform to decompose a complex musical signal into a series of sine or cosine waves that represent components of different frequencies in the musical signal. We can then resynthesize entirely new sounds by adjusting the amplitude, frequency, and phase of these waves. (在音乐合成中，傅里叶变换被用来分析和合成声音。例如，在合成器中，我们可以使用傅里叶变换将一段复杂的音乐信号分解为一系列正弦波或余弦波，这些波代表了音乐信号中不同频率的成分。然后，我们可以通过调整这些波的振幅、频率和相位，重新合成出全新的声音。)
 
