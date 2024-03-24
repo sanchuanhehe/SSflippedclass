@@ -299,7 +299,7 @@ $$
 \begin{aligned}
 x(t)&=\frac{1}{2\pi}\int_{-\infty}^{\infty}X(\omega)e^{j\omega t}d\omega\\
 t \to - t,x(-t)&=\frac{1}{2\pi}\int_{-\infty}^{\infty}X(\omega)e^{-j\omega t}d\omega\\
-t,\omega \text{互换}x(-\omega)&=\frac{1}{2\pi}\int_{-\infty}^{\infty}X(t)e^{-j\omega t}dt\\
+t,\omega \text{互换},x(-\omega)&=\frac{1}{2\pi}\int_{-\infty}^{\infty}X(t)e^{-j\omega t}dt\\
 \Longrightarrow 2\pi x(-\omega)&=\int_{-\infty}^{\infty}X(t)e^{-j\omega t}dt = \mathcal F\{X(t)\}
 \end{aligned}
 $$
@@ -331,8 +331,10 @@ $$
 证明：
 
 $$
-\int_{-\infty}^{+\infty}|x(t)|^2dt=\int_{-\infty}^{+\infty}x(t)\bar{x(t)}dt\\
-=\int_{-\infty}^{+\infty}x(t)[\frac{1}{2\pi}\int_{-\infty}^{+\infty}\bar{X(j\omega)}e^{-j\omega t}d\omega]dt
+\begin{aligned}
+\int_{-\infty}^{+\infty}|x(t)|^2dt&=\int_{-\infty}^{+\infty}x(t)\bar{x(t)}dt\\
+&=\int_{-\infty}^{+\infty}x(t)[\frac{1}{2\pi}\int_{-\infty}^{+\infty}\bar{X(j\omega)}e^{-j\omega t}d\omega]dt
+\end{aligned}
 $$
 
 改变一下积分次序，有：
