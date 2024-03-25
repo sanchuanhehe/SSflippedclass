@@ -2,17 +2,20 @@
 
 ## task 1 What’s the role of the Fourier transform in signals and systems’ analysis?
 
+### 基本分析
+
 从**物理意义**上说：傅里叶变换的本质是将信号从时域转换为**频域**。傅里叶变换的出现颠覆了人类对世界的认知：**世界不仅可以看作时间的变化，也可以看做各种频率不同加权的组合**。
 
 在**通信领域**，没有信号的频域分析，将很难在时域理解一个信号。因为通信领域中经常需要用**频率划分信道**，所以一个信号的频域特性要比时域特性重要。贯穿时域与频域的方法之一，就是传中说的傅里叶分析。傅里叶分析可分为傅里叶级数（*Fourier Serie*）和傅里叶变换(*Fourier Transformation*)。
 
-傅里叶级数的本质是将一个周期的信号分解成无限多分开的（离散的）正弦波（图一），但是宇宙似乎并不是周期的。
+傅里叶级数的本质是将一个周期的信号分解成无限多分开的（离散的）正弦波（如下图），但是宇宙似乎并不是周期的。
 
 <img src=".\assets\v2-38d2e076c57f6d3dd28749c77c89ed6e_b.webp" alt="(图一)傅里叶级数"  />
 
+
 <img src=".\assets\40cf849e55ed95732a60b52d4019d609_1440w.webp" alt="（图二）频域与时域" style="zoom: 50%;" />
 
-因此在信号与系统中傅里叶变换，是将一个时域非周期的连续信号，转换为一个在频域非周期的连续信号。也可以说实际上是对一个周期无限大的函数进行傅里叶变换。（图三）
+因此在信号与系统中傅里叶变换，是将一个时域非周期的连续信号，转换为一个在频域非周期的连续信号。也可以说实际上是对一个周期无限大的函数进行傅里叶变换。（如下图）
 
 <img src=".\assets\ece53f825c6de629befba3de12f929a7_1440w.webp" alt="（图三）傅里叶变换的频谱图" />
 
@@ -22,15 +25,15 @@
 
 <img src=".\assets\097c9051af221c171730d4bc8f436a72_1440w.webp" alt="img" />
 
-在时域中，方波信号是一个周期性的信号，由无限多的正弦波组成，频率为奇数倍的基波频率。在频域中，方波信号的频谱是一个无限多的频率分量的组合，频率为奇数倍的基波频率。这就是傅里叶变换的物理意义。傅里叶变换主要应用于波的处理   
+在时域中，方波信号是一个周期性的信号，由无限多的正弦波组成，频率为奇数倍的基波频率。在频域中，方波信号的频谱是一个无限多的频率分量的组合，频率为奇数倍的基波频率。这就是傅里叶变换的物理意义。傅里叶变换主要应用于波的处理
 
-<img src=".\assets\屏幕截图 2024-03-24 164753.png" alt="屏幕截图 2024-03-24 164753" />
+`<img src=".\assets\屏幕截图 2024-03-24 164753.png" alt="屏幕截图 2024-03-24 164753" />`
 
-图片处理
+### 图片处理
 
 图片中大致轮廓主要由低频信号决定，细节部分由高频信号决定
 
-人眼看到图片可以说是人脑进行的一次快速傅里叶变换 将图片分解为低频信号和高频信号 
+人眼看到图片可以说是人脑进行的一次快速傅里叶变换 将图片分解为低频信号和高频信号
 
 而在实际生活中图片处理如美颜相机磨皮功能等等即进行傅里叶变换对高频信号进行处理从而图片细节部分
 
@@ -38,27 +41,25 @@
 
 <img src=".\assets\10050b2f27e080f59b730655923500d0_1440w.webp" alt="img" />
 
-
-
-声音处理
+## 声音处理
 
 女：高频 男：低频
 
 随着信息时代发展 网络上随时可见变音或声音合成技术的技术，这也是一项利用傅里叶变换进行的声音处理技术
 
-变声：
+- 变声：
 
-男——>女：傅里叶变换分解—调节频率提高频率—傅里叶逆变换合成
+    男——>女：傅里叶变换分解—调节频率提高频率—傅里叶逆变换合成
 
-女——>男：傅里叶变换分解—调节频率降低频率—傅里叶逆变换合成
+    女——>男：傅里叶变换分解—调节频率降低频率—傅里叶逆变换合成
 
-声音处理：
+- 声音处理：
 
-利用傅里叶变换合成想要的声音
+    利用傅里叶变换合成想要的声音
 
-人脑的又一次快速傅里叶变换：
+- 人脑的又一次快速傅里叶变换：
 
-在嘈杂环境下，经过迅速的傅里叶变换区分高频和低频信号，能够区分男声女声以及杂音，进行滤波来获取想听到的声音。
+    在嘈杂环境下，经过迅速的傅里叶变换区分高频和低频信号，能够区分男声女声以及杂音，进行滤波来获取想听到的声音。
 
 ## task 2 For the properties of the continuous-time Fourier transform, what does the relationship between the characteristics of signals in time and frequency domains they show?
 
@@ -71,7 +72,7 @@ $$
 
 傅里叶变换的唯一性表明了信号及其频谱之间的一 一对应关系。这一性质给信号的变换、处理、鉴别 和恢复提供了理论依据。如：气体检测、矿物鉴定。
 
-###  Linearity (线性)
+### Linearity (线性)
 
 if:
 
@@ -93,7 +94,6 @@ $$
 $$
 x(t)\stackrel{\mathcal{F}}{\longleftrightarrow}X(j\omega)
 $$
-
 
 则有：
 
@@ -181,9 +181,6 @@ $$
 Re\{X(j\omega)\}=Re\{X(-j\omega)\}\\
 Im\{X(j\omega)\}=-Im\{X(-j\omega)\}
 $$
-
-
-
 
 FT共轭对称性：实信号的傅氏变换是厄米函数
 
@@ -310,8 +307,6 @@ $$
 
 <img src=".\assets\80e8fdc4df2327e9d2c79eeb2cb36e7b.png" alt="80e8fdc4df2327e9d2c79eeb2cb36e7b" />
 
-
-
 ### 帕塞瓦尔定理
 
 若：
@@ -382,7 +377,10 @@ $$
 
 1. 对输入信号 x(t)进行傅里叶变换：X(jω) = ∫x(t)e^{-jωt}dt
 2. 根据 LTI 系统的频率响应 H(jω)，计算输出信号的傅里叶变换：Y(jω) = H(jω)X(jω)
-3. 对 Y(jω)进行傅里叶逆变换，得到输出信号 y(t)：$$y(t) = \int Y(j\omega)e^{j\omega t}d\omega$$
+3. 对 Y(jω)进行傅里叶逆变换，得到输出信号 y(t)：
+   $$
+   y(t) = \int Y(j\omega)e^{j\omega t}d\omega
+   $$
 
 需要注意的是，在实际应用中，可能需要考虑一些具体的条件和限制，例如信号的边界条件、系统的稳定性等。
 
@@ -406,9 +404,9 @@ $H(j \omega)=\left\{\begin{array}{cc}\mathrm{e}^{-j \omega t_{d}}, & |\omega|<\o
 
 ## task 6 Can you relate Fourier Transform with one of Chairman Xi’s words (points of view) ?
 
-傅里叶的核心思想概括起来有以下两条. 
+傅里叶的核心思想概括起来有以下两条.
 
-(1)^1^任何一个复杂的函数(或描述事物变化的 物理量)在一定的条件下都可以分解为许多简单的 正弦或余弦函数的和.具体内容有以下4条. 
+(1)^1^任何一个复杂的函数(或描述事物变化的 物理量)在一定的条件下都可以分解为许多简单的 正弦或余弦函数的和.具体内容有以下4条.
 
 - 任何一个周期函数(在满足所谓的“狄利克 雷或狄里希利条件”下)均可以看成无穷多个(频率 跃变的)正(余)弦函数之和.
 - 任何一个定义在有限区域上的非周期函数, 均可以通过“延拓”的方法把它转化为周期函数,从 而仍然 可 以 把 它 看 成 无 穷 多 个 (频 率 跃 变 的)正 (余)弦函数的叠加.
@@ -461,7 +459,7 @@ $H(j \omega)=\left\{\begin{array}{cc}\mathrm{e}^{-j \omega t_{d}}, & |\omega|<\o
 参考文献
 
 1. 蔡志东.物理通报.傅里叶思想的精髓及其伟大之处.2021.4
-1. 姜 辉.红旗文稿2017/13.习近平治国理政思想的理论贡献
+2. 姜 辉.红旗文稿2017/13.习近平治国理政思想的理论贡献
 
 ## task 7 Music synthesis and Sound processing（音乐合成与音效处理）
 
@@ -469,4 +467,4 @@ In music synthesis, the Fourier transform is used to analyze and synthesize soun
 
 In sound effects processing. When we record an audio, we may be disturbed by ambient noise, such as wind sound, electric current sound, etc. These noises often contain many highfrequency components. Through the Fourier transform, we can identify these high-frequency noise components and filter them in the frequency domain to remove them. (在音效处理中。当我们录制一段音频时，可能会受到环境噪声的干扰，比如风声、电流声等。这噪声通常包含许多高频成分。通过傅里叶变换，我们可以将这些高频噪声成分识别出来，并在频域中进行滤波，从而去除这些噪声。）
 
-<iframe src="//player.bilibili.com/player.html?aid=1602134532&bvid=BV112421P7Ct&cid=1476894228&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="https://player.bilibili.com/player.html?aid=1602134532&bvid=BV112421P7Ct&cid=1476894228&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
