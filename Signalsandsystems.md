@@ -144,7 +144,7 @@ $$
 则有：
 
 $$
-x^*(t)\stackrel{\mathcal{F}}{\longleftrightarrow}X^*(j\omega)
+x^*(t)\stackrel{\mathcal{F}}{\longleftrightarrow}X^*(-j\omega)
 $$
 
 证明：
